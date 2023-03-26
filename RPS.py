@@ -225,16 +225,31 @@ if __name__ == "__main__":
     options = ["rock", "paper", "scissors"] #list of options for the computer
 
     welcome()#print welcome banner + game intro
-    choice = input("The choice is yours...what will it be(type rock,paper,scissors): ")#Take users choice
-    choice = choice.lower() #set user input to lowercase for easier validation because the list is in lowercase.
-    check = valid_choice(choice)#send user input off to be validated,
 
-    if check == True:
-        computerOption = random.choice(options) #This will choose a random option from your list for the computer
+    running = bool(True)
 
-        match_results(choice, computerOption)
+    while running==True:
+        choice = input("The choice is yours...what will it be(type rock,paper,scissors): ")#Take users choice
+        choice = choice.lower() #set user input to lowercase for easier validation because the list is in lowercase.
+        check = valid_choice(choice)#send user input off to be validated,
 
+        if check == True:
+            computerOption = random.choice(options) #This will choose a random option from your list for the computer
+
+            match_results(choice, computerOption)
+
+        else: #if not valid
+            print("\nSorry, that wasn't an option, the options are: rock, paper, or scissors...")#print error
         
+        replay = input("\ndo you want to play again???(y or n)")#ask the user if they want to play again
+
+        if replay =='y': #if the user enterd y
+            running = True #play again
+        else: #else
+            running = False #exit the game
+    
+    print("\nThank you for playing...")
+ 
 
     '''
     DEBUGING/TESTING
