@@ -17,4 +17,5 @@ OUR DEV TEAM
 christian shank-martel
 -Designer
 -Main Dev
+Ding Quy Pham
 -QA tester
